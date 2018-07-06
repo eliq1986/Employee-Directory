@@ -27,6 +27,19 @@ p {
   word-break: break-all;
 }
 
+input {
+  border: none;
+  padding: .8em;
+  width: 50%;
+  margin: auto;
+  display: block;
+  border-radius: .8em;
+
+}
+input:hover {
+  cursor: pointer;
+}
+
 .box {
     background-color: white;
     padding: 1em 0;
@@ -116,6 +129,7 @@ p {
 }
 
 
+
 #topHeading {
   margin: 2em 0;
 }
@@ -127,6 +141,8 @@ p {
   display: none;
 }
 @media (min-width: 1024px) {
+
+
   h2 {
     margin: 0;
     text-align: left;
@@ -134,7 +150,7 @@ p {
   body {
     width: 90%;
     margin: auto;
-    max-width: 1300px;
+    max-width: 1350px;
   }
 
 
@@ -152,6 +168,12 @@ p {
   margin-top: 2em;
 }
 
+.modal-photo {
+  /* margin-right: 95px;
+  margin-left: 0; */
+  margin: auto;
+  display: block;
+}
 
  .modal-email, .modal-city, .modal-phone, .modal-address, .modal-birthday {
     color: #c6c6c6;
@@ -175,7 +197,30 @@ p {
 
 
 }
+#arrowback {
+  position: relative;
+  top: -560px;
+  left: 10%;
+  z-index: 1;
+  width: 8%;
+  margin: 0;
 
+
+
+}
+#arrowforward {
+  position: relative;
+    top: -560px;
+    left: 71%;
+    z-index: 1;
+    width: 8%;
+    margin: 0;
+
+}
+#arrowforward, #arrowback, #arrowback:hover {
+  cursor: pointer;
+
+}
 .container {
   display: flex;
   flex-flow: wrap;
