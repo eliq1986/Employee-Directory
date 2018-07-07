@@ -1,5 +1,4 @@
 
-
 // API CALL
 fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture,phone&nat=us')
 .then(response => response.json())
@@ -10,6 +9,8 @@ fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture
   const closeButton = document.querySelector(".closeBtb");
   const modal = document.getElementById("simpleModal");
   const arrowback = document.getElementById("arrowback");
+  const body = document.querySelector("body");
+  let nextElement;
 
 // returns formatted DOB
   const formatBirthday = (data) => {
@@ -30,9 +31,8 @@ fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture
 
 
   let results = data.results;
-
+// maps through fetch api data and appends via innerHTML
        directoryContainer.innerHTML = `
-
      ${results.map((item) => `
            <div class="box">
         <div>
@@ -48,7 +48,6 @@ fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture
                <p class="contact-birthday">${item.dob.date}</p>
              </div>
            </div>
-
            `).join("")}
        `
 directoryContainer.addEventListener("click", (event) => {
@@ -79,11 +78,12 @@ directoryContainer.addEventListener("click", (event) => {
 
 })
 
-modal.addEventListener("click", (event)=> {
-  if (event.target.id === "arrowback") {
-
-  }
-})
+// modal.addEventListener("click", (event)=> {
+//    if (event.target.id = "arrowforward") {
+//      console.log(modal.children)
+//      console.log(directoryContainer.children);
+//    }
+// })
 
 closeButton.addEventListener("click",() => {
      modal.style.display = "none";

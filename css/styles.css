@@ -66,7 +66,7 @@ input:hover {
 }
 
  .contact-email, .contact-city,
-  .phone, .contact-address, .contact-birthday {
+  .phone, .contact-address, .contact-birthday{
    color: #a8a8a8;
    font-weight: 300;
    font-size: .9em;
@@ -76,6 +76,12 @@ input:hover {
 }
 .contact-city, .contact-address {
   text-transform: capitalize;
+}
+.modal-name, .modal-city, .modal-address, .modal-email, .modal-phone, .modal-birthday {
+  margin-top: .8em;
+  text-transform: capitalize;
+  color: #a8a8a8;
+
 }
 
 
@@ -94,16 +100,18 @@ input:hover {
 }
 .modal-content {
   background-color: white;
-  margin: 20% auto;
+  margin: 8% auto;
   padding: 20px;
   width: 90%;
   text-align: center;
   border-radius: .3em;
+  overflow: auto;
+  max-width: 300px;
 
 }
 .closeBtb {
   float: right;
-  font-size: 20px;
+  font-size: 3em;
 
 
 }
@@ -134,14 +142,29 @@ input:hover {
   margin: 2em 0;
 }
 
+
 .closeBtb:hover , .box:hover{
   cursor: pointer;
 }
 .border, .contact-address, .contact-birthday, .phone {
   display: none;
 }
-@media (min-width: 1024px) {
 
+#arrowback, #arrowforward {
+  margin: 0 1em 0 1em;
+}
+
+
+#arrowDiv {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: -240px;
+}
+@media (min-width: 1024px) {
+  .closeBtb {
+    font-size: 2em;
+  }
 
   h2 {
     margin: 0;
@@ -158,7 +181,11 @@ input:hover {
     margin: 1em 10px 10px 0;
     width: 32%;
 
-
+  }
+  #arrowDiv {
+    position: relative;
+    top: -380px;
+    justify-content: space-around;
 
   }
 .modal-address, .modal-city {
@@ -169,8 +196,7 @@ input:hover {
 }
 
 .modal-photo {
-  /* margin-right: 95px;
-  margin-left: 0; */
+
   margin: auto;
   display: block;
 }
@@ -197,7 +223,7 @@ input:hover {
 
 
 }
-#arrowback {
+/* #arrowback {
   position: relative;
   top: -560px;
   left: 10%;
@@ -207,8 +233,8 @@ input:hover {
 
 
 
-}
-#arrowforward {
+} */
+/* #arrowforward {
   position: relative;
     top: -560px;
     left: 71%;
@@ -216,7 +242,7 @@ input:hover {
     width: 8%;
     margin: 0;
 
-}
+} */
 #arrowforward, #arrowback, #arrowback:hover {
   cursor: pointer;
 
@@ -227,7 +253,7 @@ input:hover {
 }
 .modal-content {
   background-color: white;
-  margin: 20% auto;
+  margin: 15% auto;
   padding: 20px;
   width: 25%;
   box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
