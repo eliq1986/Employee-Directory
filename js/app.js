@@ -1,16 +1,17 @@
-
+"use strict";
 // API CALL
 fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture,phone&nat=us')
 .then(response => response.json())
 .then(data => {
+  
 
 //DOM ELEMENTS
   const directoryContainer = document.getElementsByClassName("container")[0];
   const closeButton = document.querySelector(".closeBtb");
   const modal = document.getElementById("simpleModal");
   const arrowback = document.getElementById("arrowback");
-  const body = document.querySelector("body");
-  let nextElement;
+
+
 
 // returns formatted DOB
   const formatBirthday = (data) => {
@@ -30,7 +31,12 @@ fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture
   const inputElement = document.querySelector("input");
 
 
+
+ // binding holds JSON data
   let results = data.results;
+
+
+
 // maps through fetch api data and appends via innerHTML
        directoryContainer.innerHTML = `
      ${results.map((item) => `
@@ -50,6 +56,8 @@ fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture
            </div>
            `).join("")}
        `
+
+       //  listener fires when a box is clicked
 directoryContainer.addEventListener("click", (event) => {
    if (event.target.tagName === "P" || event.target.tagName === "IMG") {
 
@@ -78,29 +86,29 @@ directoryContainer.addEventListener("click", (event) => {
 
 })
 
-// modal.addEventListener("click", (event)=> {
-//    if (event.target.id = "arrowforward") {
-//      console.log(modal.children)
-//      console.log(directoryContainer.children);
-//    }
-// })
 
+// closes modal
 closeButton.addEventListener("click",() => {
      modal.style.display = "none";
 })
 
+
+
+//filters employees
 inputElement.addEventListener("keyup", (event)=> {
 
 let searchResult = inputElement.value.toUpperCase();
- const employeeNames = document.getElementsByClassName("contact-name");
+ const employeeNames = [...document.getElementsByClassName("contact-name")];
 
-      for (let i = 0 ; i<employeeNames.length;i++){
-      if (employeeNames[i].textContent.toUpperCase().indexOf(searchResult) >= 0) {
-         employeeNames[i].parentNode.parentNode.style.display = "";
+   employeeNames.forEach(employee => {
+      if (employee.textContent.toUpperCase().indexOf(searchResult) > -1 ) {
+           employee.parentNode.parentNode.style.display = "";
       }else {
-        employeeNames[i].parentNode.parentNode.style.display = "none";
+         employee.parentNode.parentNode.style.display = "none";
       }
-  }
+   })
 })
+
+
 })
-.catch(error => console.log("Looks like there's an error", error));
+.catch(error => console.log("LOOKS LIKE THERE'S AN ERROR", error));

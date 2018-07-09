@@ -1,9 +1,11 @@
 * {
+
   box-sizing: border-box;
   font-family: 'Roboto Slab', serif;
 }
+
 body {
-   background-color: 	#F8F8F8;
+background: radial-gradient(circle, gray, white);
 }
 
  h2 {
@@ -11,6 +13,7 @@ body {
    width: 90%;
    text-align: center;
    font-weight: 400;
+   letter-spacing: .2em;
 }
 
 img {
@@ -30,7 +33,7 @@ p {
 input {
   border: none;
   padding: .8em;
-  width: 50%;
+  width: 80%;
   margin: auto;
   display: block;
   border-radius: .8em;
@@ -164,6 +167,9 @@ input:hover {
 @media (min-width: 1024px) {
   .closeBtb {
     font-size: 2em;
+  }
+  input {
+    width: 50%;
   }
 
   h2 {
