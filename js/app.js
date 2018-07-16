@@ -3,7 +3,7 @@
 fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture,phone&nat=us')
 .then(response => response.json())
 .then(data => {
-  
+
 
 //DOM ELEMENTS
   const directoryContainer = document.getElementsByClassName("container")[0];
@@ -19,8 +19,7 @@ fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture
     let day = dob.pop();
     let month = dob.pop();
     let year = dob.pop();
-    let bDay = `${month}/${day}/${year}`;
-    return bDay;
+    return  `${month}/${day}/${year}`;
 
   }
 
