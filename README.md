@@ -1,7 +1,7 @@
 # Employee-Directory
 
 ### Public API to Create an Employee Directory
-[DEMO](www.google.com)
+[DEMO](https://eliq1986.github.io/Employee-Directory/)
 #### Built with:
 1. HTML5
 2. CSS3
