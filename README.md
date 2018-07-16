@@ -1,4 +1,4 @@
-# Employee-Directory
+# Responsive Mobile First Employee-Directory
 
 ### Public API to Create an Employee Directory
 [DEMO](https://eliq1986.github.io/Employee-Directory/)
