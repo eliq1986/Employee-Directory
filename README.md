@@ -2,7 +2,7 @@
 
 ### Public API to Create an Employee Directory
 [DEMO](https://eliq1986.github.io/Employee-Directory/)
-#### Skills Learned:-
+#### Skills Learned:
 - HTML5
 - CSS3
 - Vanilla Javascript
