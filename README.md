@@ -7,6 +7,7 @@
 - CSS3
 - Vanilla Javascript
 - Fetch API 
+- Responsive Web Development
 
 
 <p align="center">
