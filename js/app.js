@@ -7,9 +7,9 @@ fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture
 
 //DOM ELEMENTS
   const directoryContainer = document.getElementsByClassName("container")[0];
-  const closeButton = document.querySelector(".closeBtb");
   const modal = document.getElementById("simpleModal");
   const arrowback = document.getElementById("arrowback");
+  const modalContent = document.querySelector(".modal-content");
 
 
 
@@ -87,11 +87,20 @@ directoryContainer.addEventListener("click", (event) => {
 
 
 // closes modal
-closeButton.addEventListener("click",() => {
-     modal.style.display = "none";
+document.querySelector(".closeBtb").addEventListener("click",() => {
+   modalContent.classList.remove("modal-content");
+   modalContent.classList.add("modal-content-out");
+
+
+
+setTimeout(()=> {
+  modal.style.display = "none";
+  modalContent.classList.remove("modal-content-out");
+  modalContent.classList.add("modal-content");
+
+}, 600);
+
 })
-
-
 
 //filters employees
 inputElement.addEventListener("keyup", (event)=> {
