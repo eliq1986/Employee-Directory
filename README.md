@@ -6,14 +6,18 @@
 - HTML5
 - CSS3
 - Vanilla Javascript
-- Fetch API 
+- Fetch API
 - Responsive Web Development
 
 
 <p align="center">
-<img src=https://user-images.githubusercontent.com/6277603/42739888-3b167a04-8854-11e8-829f-1b5cd0f9c3f4.png  >
+<img src=https://user-images.githubusercontent.com/6277603/50612453-f4fee080-0e8e-11e9-9bae-bb5908346473.png>
 </p>
 
 <p align="center">
-<img src=https://user-images.githubusercontent.com/6277603/42739933-b57cea08-8854-11e8-84fe-a1d1497426d8.png  >
+<img src=https://user-images.githubusercontent.com/6277603/50612521-1eb80780-0e8f-11e9-8137-1b1210119417.png>
+</p>
+
+<p align="center">
+<img src=https://user-images.githubusercontent.com/6277603/50612692-c7666700-0e8f-11e9-8ee4-fdd302422fe2.png>
 </p>
