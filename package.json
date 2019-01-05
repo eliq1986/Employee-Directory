@@ -1,0 +1,23 @@
+{
+  "name": "Employee-Directory",
+  "version": "1.0.0",
+  "description": "### Public API to Create an Employee Directory [DEMO](https://eliq1986.github.io/Employee-Directory/) #### Skills Learned: - HTML5 - CSS3 - Vanilla Javascript - Fetch API - Responsive Web Development",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/styles.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliq1986/Employee-Directory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eliq1986/Employee-Directory/issues"
+  },
+  "homepage": "https://github.com/eliq1986/Employee-Directory#readme",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

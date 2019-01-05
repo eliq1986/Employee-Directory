@@ -1,0 +1,22 @@
+
+.box {
+  background-color: $color-employee-light-bg;
+  padding: 1em 0;
+  border-radius: .5em;
+  border: 2px solid $color-employee-border;
+  margin: 1em auto;
+  display: flex;
+  width: 90%;
+  transition: .3s;
+  &:hover {
+  cursor: pointer;
+  border: 2px solid complement($color-employee-border);
+  transition-timing-function: ease-in-out;
+  transform: rotate(5deg);
+  box-shadow: 0 0 1px 2px $color-boxshadow;
+  }
+  @media(min-width: $min-screen-break) {
+    margin: 1em 10px 10px 0;
+    width: 32%;
+  }
+}

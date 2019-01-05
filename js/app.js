@@ -7,8 +7,7 @@ fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture
 
 //DOM ELEMENTS
   const directoryContainer = document.getElementsByClassName("container")[0];
-  const modal = document.getElementById("simpleModal");
-  const arrowback = document.getElementById("arrowback");
+  const modal = document.querySelector(".simpleModal");
   const modalContent = document.querySelector(".modal-content");
 
 
@@ -31,26 +30,39 @@ fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture
 
 
 
- // binding holds JSON data
-  let results = data.results;
+ // holds JSON data
+  let randomUsers = data.results;
 
+
+// appends clicked card info to modal
+function appendsInfoToModal(user) {
+  document.querySelector(".modal-address").textContent = user.address.street;
+  document.querySelector(".modal-photo").src = user.photo;
+  document.querySelector(".modal-name").textContent = user.name;
+  document.querySelector(".modal-email").textContent = user.email;
+  document.querySelector(".modal-city").textContent = user.address.city;
+  document.querySelector(".modal-phone").textContent = user.phone
+  document.querySelector(".modal-birthday").textContent = `Birthday: ${formatBirthday(event.target.parentNode.parentNode.children[1].children[6].textContent)}`;
+  document.querySelector(".modal-border").style.display = "block";
+  modal.style.display = "block";
+}
 
 
 // maps through fetch api data and appends via innerHTML
        directoryContainer.innerHTML = `
-     ${results.map((item) => `
+     ${randomUsers.map(randomUser => `
            <div class="box">
         <div>
-           <img class="photo" alt="profile-pic" src=${item.picture.large}>
+           <img class="photo" alt="profile-pic" src=${randomUser.picture.large}>
         </div>
              <div class="contact-info">
-               <p class="contact-name">${item.name.first} ${item.name.last}</p>
-               <p class="contact-email">${item.email}</p>
-               <p class="contact-city">${item.location.city}</p>
+               <p class="contact-name">${randomUser.name.first} ${randomUser.name.last}</p>
+               <p class="contact-email">${randomUser.email}</p>
+               <p class="contact-city">${randomUser.location.city}</p>
                 <hr class="border"/>
-               <p class="phone">${item.phone}</p>
-               <p class="contact-address">${item.location.street}, ${item.location.state} ${item.location.postcode}</p>
-               <p class="contact-birthday">${item.dob.date}</p>
+               <p class="phone">${randomUser.phone}</p>
+               <p class="contact-address">${randomUser.location.street}, ${randomUser.location.state} ${randomUser.location.postcode}</p>
+               <p class="contact-birthday">${randomUser.dob.date}</p>
              </div>
            </div>
            `).join("")}
@@ -60,44 +72,38 @@ fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture
 directoryContainer.addEventListener("click", (event) => {
    if (event.target.tagName === "P" || event.target.tagName === "IMG") {
 
-  document.querySelector(".modal-photo").src =   event.target.parentNode.parentNode.children[0].childNodes[1].attributes[2].value;
-  document.querySelector(".modal-name").textContent = event.target.parentNode.parentNode.children[1].children[0].textContent;
-  document.querySelector(".modal-email").textContent = event.target.parentNode.parentNode.children[1].children[1].textContent;
-  document.querySelector(".modal-city").textContent = event.target.parentNode.parentNode.children[1].children[2].textContent;
-  document.querySelector(".modal-border").style.display = "block";
-  document.querySelector(".modal-phone").textContent = event.target.parentNode.parentNode.children[1].children[4].textContent;
-  document.querySelector(".modal-address").textContent = event.target.parentNode.parentNode.children[1].children[5].textContent;
-  document.querySelector(".modal-birthday").textContent = `Birthday: ${formatBirthday(event.target.parentNode.parentNode.children[1].children[6].textContent)}`;
-  modal.style.display = "block";
+     const user = {
+       photo: event.target.parentNode.parentNode.children[0].childNodes[1].attributes[2].value,
+       name: event.target.parentNode.parentNode.children[1].children[0].textContent,
+       email: event.target.parentNode.parentNode.children[1].children[1].textContent,
+       phone: event.target.parentNode.parentNode.children[1].children[4].textContent,
+
+       address: {
+         street: event.target.parentNode.parentNode.children[1].children[5].textContent,
+         city: event.target.parentNode.parentNode.children[1].children[2].textContent
+       }
+     }
+
+   appendsInfoToModal(user);
+
    }
+
   else if (event.target.className === "box") {
-     document.querySelector(".modal-photo").src = event.target.children[0].childNodes[1].attributes[2].value;
-    document.querySelector(".modal-name").textContent = event.target.children[1].children[0].textContent;
-    document.querySelector(".modal-email").textContent = event.target.children[1].children[1].textContent;
-    document.querySelector(".modal-city").textContent = event.target.children[1].children[2].textContent;
-    document.querySelector(".modal-border").style.display = "block";
-    document.querySelector(".modal-phone").textContent = event.target.children[1].children[4].textContent;
-    document.querySelector(".modal-address").textContent = event.target.children[1].children[5].textContent;
-    document.querySelector(".modal-birthday").textContent = `Birthday: ${formatBirthday(event.target.children[1].children[6].textContent)}`;
-    modal.style.display = "block";
+    appendsInfoToModal(user);
 
    }
-
 })
 
 
 // closes modal
-document.querySelector(".closeBtb").addEventListener("click",() => {
+document.querySelector(".closeBtn").addEventListener("click",() => {
    modalContent.classList.remove("modal-content");
    modalContent.classList.add("modal-content-out");
-
-
 
 setTimeout(()=> {
   modal.style.display = "none";
   modalContent.classList.remove("modal-content-out");
   modalContent.classList.add("modal-content");
-
 }, 600);
 
 })
@@ -109,7 +115,8 @@ let searchResult = inputElement.value.toUpperCase();
  const employeeNames = [...document.getElementsByClassName("contact-name")];
 
    employeeNames.forEach(employee => {
-      if (employee.textContent.toUpperCase().indexOf(searchResult) > -1 ) {
+     const employeeNameCapitalized = employee.textContent.toUpperCase();
+      if (employeeNameCapitalized.indexOf(searchResult) > -1 ) {
            employee.parentNode.parentNode.style.display = "";
       }else {
          employee.parentNode.parentNode.style.display = "none";

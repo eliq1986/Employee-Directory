@@ -1,0 +1,10 @@
+.closeBtn {
+float: right;
+font-size: 3em;
+  &:hover {
+    cursor: pointer;
+  }
+  @media(min-width: $min-screen-break) {
+    font-size: 2em;
+  }
+}

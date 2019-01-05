@@ -1,323 +1,214 @@
 * {
-box-sizing: border-box;
-font-family: 'Roboto Slab', serif;
-}
+  box-sizing: border-box;
+  font-family: 'Roboto Slab', serif; }
 
 html {
-background: linear-gradient(rgba(208, 208, 208, 0.4), rgba(208, 208, 208, 0.7)), url("../images/brick-wall.jpg");
-background-size: cover;
-background-repeat: no-repeat;
-min-height: 100%;
-}
-
-
-img {
-border-radius: 50%;
-width: 80px;
-margin-left: 1em;
-margin-top: 15px;
-}
-
-main {
-margin-top: 1em;
-}
-
-p {
-margin: 0;
-word-break: break-all;
-}
-
-input {
-border: none;
-padding: .8em;
-width: 80%;
-margin: auto;
-display: block;
-border-radius: .3rem;
-outline: none;
-}
-
-input:hover {
-cursor: pointer;
-}
-
-.box {
-background-color: white;
-padding: 1em 0;
-border-radius: .5em;
-border: 2px solid #C0C0C0;
-margin: 1em auto;
-display: flex;
-width: 90%;
-transition: .3s;
-}
-
-.contact-info {
-margin-left: 2em;
-}
-
-.contact-name {
-font-weight: bold;
-padding: .5em 0;
-text-transform: capitalize;
-}
-
-.border {
-border-top: 1px solid #a8a8a8;
-}
-
-.contact-email,
-.contact-city,
-.phone,
-.contact-address,
-.contact-birthday {
-color: #a8a8a8;
-font-weight: 300;
-font-size: .9em;
-padding: .5em 0;
-}
-
-.contact-city,
-.contact-address {
-text-transform: capitalize;
-}
-
-.modal-name,
-.modal-city,
-.modal-address,
-.modal-email,
-.modal-phone,
-.modal-birthday {
-margin-top: .8em;
-text-transform: capitalize;
-color: #a8a8a8;
-}
-
-.modal {
-display: none;
-position: fixed;
-z-index: 1;
-left: 0;
-top: 0;
-height: 100%;
-width: 100%;
-background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-background-color: white;
-margin: 8% auto;
-padding: 20px;
-width: 90%;
-text-align: center;
-border-radius: .3em;
-overflow: auto;
-max-width: 300px;
-animation-name: moveDown;
-animation-duration: .7s;
-animation-timing-function: ease-in;
-}
-
-.modal-content-out {
-background-color: white;
-margin: 8% auto;
-padding: 20px;
-width: 90%;
-text-align: center;
-border-radius: .3em;
-overflow: auto;
-max-width: 300px;
-animation-name: moveUp;
-animation-duration: .7s;
-animation-timing-function: ease-in-out;
-}
-
-
-.closeBtb {
-float: right;
-font-size: 3em;
-}
-
-.modal-content .photo {
-margin: .5em 0;
-}
-
-.modal-content .contact-city,
-.modal-content .contact-name,
-.modal-content .contact-email {
-margin-bottom: .5em;
-}
-
-.modal-content .phone {
-margin-top: 2em;
-margin-bottom: : 1em;
-}
-
-.modal-content .contact-address,
-.modal-content .contact-birthday {
-margin: .8em 0;
-}
-
-.box:hover {
-border: 2px solid #6B5B95;
-transition-timing-function: ease-in-out;
-transform: rotate(5deg);
-box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.25);
-}
-
-.title {
-  text-align: center;
-  margin: auto;
-  width: 100%;
-  font-weight: 400;
-  font-size: 3rem;
-  letter-spacing: .2em;
-  text-shadow: -2px 0 2px black;
-  margin: 2em 0;
-}
-
-.closeBtb:hover,
-.box:hover {
-cursor: pointer;
-}
-
-.border,
-.contact-address,
-.contact-birthday,
-.phone {
-display: none;
-}
-
-#arrowback,
-#arrowforward {
-margin: 0 1em 0 1em;
-}
-
-#arrowDiv {
-position: relative;
-display: flex;
-justify-content: center;
-top: -240px;
-}
+  background: linear-gradient(rgba(208, 208, 208, 0.4), rgba(208, 208, 208, 0.7)), url("../images/brick-wall.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%; }
 
 @media (min-width: 1024px) {
-input {
-  width: 50%;
-}
-h2 {
-  margin: 0;
-  text-align: left;
-}
-body {
-  width: 90%;
-  margin: auto;
-  max-width: 1350px;
-}
+  body {
+    width: 90%;
+    margin: auto;
+    max-width: 1350px; } }
+
+.closeBtn {
+  float: right;
+  font-size: 3em; }
+  .closeBtn:hover {
+    cursor: pointer; }
+  @media (min-width: 1024px) {
+    .closeBtn {
+      font-size: 2em; } }
+
 img {
-  margin-top: 10px;
-  width: 95px;
-}
-.box {
-  margin: 1em 10px 10px 0;
-  width: 32%;
-}
-#arrowDiv {
-  position: relative;
-  top: -380px;
-  justify-content: space-around;
-}
-.closeBtb {
-  font-size: 2em;
-}
-.modal-address,
-.modal-city {
-  text-transform: capitalize;
-}
-.modal-phone {
-  margin-top: 2em;
-}
-.modal-photo {
+  border-radius: 50%;
+  width: 80px;
+  margin-left: 1em;
+  margin-top: 15px; }
+  @media (min-width: 1024px) {
+    img {
+      margin-top: 10px;
+      width: 95px; } }
+
+main {
+  margin-top: 1em; }
+
+p {
+  margin: 0;
+  word-break: break-all; }
+  @media (min-width: 1024px) {
+    p {
+      padding-bottom: .7em; } }
+
+input {
+  border: none;
+  padding: .8em;
+  width: 80%;
   margin: auto;
   display: block;
-}
-.modal-email,
-.modal-city,
-.modal-phone,
-.modal-address,
-.modal-birthday {
-  color: #c6c6c6;
-}
-.modal-name {
-  font-size: 1.2em;
-  color: black;
-  margin-top: 2em;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-.contact-info {
-  margin: 1.1em 0 0 1em;
-  width: 90%;
-}
-/* #arrowback {
-position: relative;
-top: -560px;
-left: 10%;
-z-index: 1;
-width: 8%;
-margin: 0;
+  border-radius: .3rem;
+  outline: none; }
+  input:hover {
+    cursor: pointer; }
+  @media (min-width: 1024px) {
+    input {
+      width: 50%; } }
 
+@media (min-width: 1024px) {
+  h2 {
+    margin: 0;
+    text-align: left; } }
 
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    flex-flow: wrap; } }
 
-} */
-/* #arrowforward {
-position: relative;
-top: -560px;
-left: 71%;
-z-index: 1;
-width: 8%;
-margin: 0;
-
-} */
-#arrowforward,
-#arrowback,
-#arrowback:hover {
-  cursor: pointer;
-}
-.container {
+.box {
+  background-color: #fff;
+  padding: 1em 0;
+  border-radius: .5em;
+  border: 2px solid #a8a8a8;
+  margin: 1em auto;
   display: flex;
-  flex-flow: wrap;
-}
-.modal-content {
-  background-color: white;
-  margin: 15% auto;
-  padding: 20px;
-  width: 25%;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
-  text-align: center;
-  border-radius: .3em;
-}
-p {
-  padding-bottom: .7em;
-}
-@keyframes moveUp {
-  0% {
-    transform: translateY(0);
-  }
-  80% {
-    opacity: 0.3;
-  }
-  100% {
-    transform: translateY(-300px);
-    opacity: 0;
-  }
-}
-@keyframes moveDown {
-  0% {
-    transform: translateY(-300px);
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+  width: 90%;
+  transition: .3s; }
+  .box:hover {
+    cursor: pointer;
+    border: 2px solid #a8a8a8;
+    transition-timing-function: ease-in-out;
+    transform: rotate(5deg);
+    box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.25); }
+  @media (min-width: 1024px) {
+    .box {
+      margin: 1em 10px 10px 0;
+      width: 32%; } }
+
+.contact-info {
+  margin-left: 2em; }
+
+.contact-name {
+  font-weight: bold;
+  padding: .5em 0;
+  text-transform: capitalize; }
+
+.contact-email, .contact-city, .contact-address, .contact-birthday {
+  color: #a8a8a8;
+  font-weight: 300;
+  font-size: .9em;
+  padding: .5em 0; }
+
+.contact-city, .contact-address {
+  text-transform: capitalize; }
+
+.contact-address, .contact-birthday {
+  display: none; }
+
+@media (min-width: 1024px) {
+  .contact-info {
+    margin: 1.1em 0 0 1em;
+    width: 90%; } }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); }
+  .modal-name, .modal-city, .modal-address, .modal-email, .modal-phone, .modal-birthday {
+    margin-top: .8em;
+    text-transform: capitalize;
+    color: #a8a8a8; }
+  .modal-content {
+    background-color: #fff;
+    margin: 8% auto;
+    padding: 20px;
+    width: 90%;
+    text-align: center;
+    border-radius: .3em;
+    overflow: auto;
+    max-width: 300px;
+    animation-name: moveDown;
+    animation-duration: .7s;
+    animation-timing-function: ease-in; }
+    .modal-content .contact-city, .modal-content .contact-name, .modal-content .contact-email {
+      margin-bottom: .5em; }
+    .modal-content .contact-addres,
+    .modal-content .contact-birthday {
+      margin: .8em 0; }
+  .modal-content-out {
+    background-color: #fff;
+    margin: 8% auto;
+    padding: 20px;
+    width: 90%;
+    text-align: center;
+    border-radius: .3em;
+    overflow: auto;
+    max-width: 300px;
+    animation-name: moveUp;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out; }
+  .modal-border {
+    display: none; }
+  @media (min-width: 1024px) {
+    .modal-city, .modal-address {
+      text-transform: capitalize; }
+    .modal-phone {
+      margin-top: 2em; }
+    .modal-photo {
+      margin: auto;
+      display: block; }
+    .modal-email, .modal-city, .modal-phone, .modal-address, .modal-brithday {
+      color: #c6c6c6; }
+    .modal-name {
+      font-size: 1.2em;
+      color: #000;
+      margin-top: 2em;
+      font-weight: bold;
+      text-transform: capitalize; }
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      width: 25%;
+      box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+      text-align: center;
+      border-radius: .3em; } }
+
+.phone,
+.border {
+  display: none; }
+
+@media (min-width: 1024px) {
+  .title {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    font-weight: 400;
+    font-size: 3rem;
+    letter-spacing: .2em;
+    text-shadow: -2px 0 2px #000;
+    margin: 2em 0; } }
+
+@media (min-width: 1024px) {
+  @keyframes moveUp {
+    0% {
+      transform: translateY(0); }
+    80% {
+      opacity: 0.3; }
+    100% {
+      transform: translateY(-300px);
+      opacity: 0; } }
+  @keyframes moveDown {
+    0% {
+      transform: translateY(-300px);
+      opacity: 0; }
+    100% {
+      opacity: 1;
+      transform: translateY(0); } } }
