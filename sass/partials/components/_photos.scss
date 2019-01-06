@@ -1,0 +1,10 @@
+img {
+border-radius: 50%;
+width: 80px;
+margin-left: 1em;
+margin-top: 15px;
+ @media(min-width: $min-screen-break) {
+   margin-top: 10px;
+   width: 95px;
+ }
+}

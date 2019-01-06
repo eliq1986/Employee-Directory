@@ -1,0 +1,7 @@
+.container {
+  @media(min-width: $min-screen-break) {
+    display: flex;
+    flex-flow: wrap;
+  }
+
+}

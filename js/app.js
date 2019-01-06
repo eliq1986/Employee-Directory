@@ -7,7 +7,7 @@ fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture
 
 //DOM ELEMENTS
   const directoryContainer = document.getElementsByClassName("container")[0];
-  const modal = document.querySelector(".simpleModal");
+  const modal = document.querySelector(".modal");
   const modalContent = document.querySelector(".modal-content");
 
 
@@ -34,20 +34,6 @@ fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture
   let randomUsers = data.results;
 
 
-// appends clicked card info to modal
-function appendsInfoToModal(user) {
-  document.querySelector(".modal-address").textContent = user.address.street;
-  document.querySelector(".modal-photo").src = user.photo;
-  document.querySelector(".modal-name").textContent = user.name;
-  document.querySelector(".modal-email").textContent = user.email;
-  document.querySelector(".modal-city").textContent = user.address.city;
-  document.querySelector(".modal-phone").textContent = user.phone
-  document.querySelector(".modal-birthday").textContent = `Birthday: ${formatBirthday(event.target.parentNode.parentNode.children[1].children[6].textContent)}`;
-  document.querySelector(".modal-border").style.display = "block";
-  modal.style.display = "block";
-}
-
-
 // maps through fetch api data and appends via innerHTML
        directoryContainer.innerHTML = `
      ${randomUsers.map(randomUser => `
@@ -67,33 +53,35 @@ function appendsInfoToModal(user) {
            </div>
            `).join("")}
        `
-
+       
        //  listener fires when a box is clicked
-directoryContainer.addEventListener("click", (event) => {
-   if (event.target.tagName === "P" || event.target.tagName === "IMG") {
+  directoryContainer.addEventListener("click", (event) => {
+     if (event.target.tagName === "P" || event.target.tagName === "IMG") {
 
-     const user = {
-       photo: event.target.parentNode.parentNode.children[0].childNodes[1].attributes[2].value,
-       name: event.target.parentNode.parentNode.children[1].children[0].textContent,
-       email: event.target.parentNode.parentNode.children[1].children[1].textContent,
-       phone: event.target.parentNode.parentNode.children[1].children[4].textContent,
+    document.querySelector(".modal-photo").src =   event.target.parentNode.parentNode.children[0].childNodes[1].attributes[2].value;
+    document.querySelector(".modal-name").textContent = event.target.parentNode.parentNode.children[1].children[0].textContent;
+    document.querySelector(".modal-email").textContent = event.target.parentNode.parentNode.children[1].children[1].textContent;
+    document.querySelector(".modal-city").textContent = event.target.parentNode.parentNode.children[1].children[2].textContent;
+    document.querySelector(".modal-border").style.display = "block";
+    document.querySelector(".modal-phone").textContent = event.target.parentNode.parentNode.children[1].children[4].textContent;
+    document.querySelector(".modal-address").textContent = event.target.parentNode.parentNode.children[1].children[5].textContent;
+    document.querySelector(".modal-birthday").textContent = `Birthday: ${formatBirthday(event.target.parentNode.parentNode.children[1].children[6].textContent)}`;
+    modal.style.display = "block";
+     }
+    else if (event.target.className === "box") {
+       document.querySelector(".modal-photo").src = event.target.children[0].childNodes[1].attributes[2].value;
+      document.querySelector(".modal-name").textContent = event.target.children[1].children[0].textContent;
+      document.querySelector(".modal-email").textContent = event.target.children[1].children[1].textContent;
+      document.querySelector(".modal-city").textContent = event.target.children[1].children[2].textContent;
+      document.querySelector(".modal-border").style.display = "block";
+      document.querySelector(".modal-phone").textContent = event.target.children[1].children[4].textContent;
+      document.querySelector(".modal-address").textContent = event.target.children[1].children[5].textContent;
+      document.querySelector(".modal-birthday").textContent = `Birthday: ${formatBirthday(event.target.children[1].children[6].textContent)}`;
+      modal.style.display = "block";
 
-       address: {
-         street: event.target.parentNode.parentNode.children[1].children[5].textContent,
-         city: event.target.parentNode.parentNode.children[1].children[2].textContent
-       }
      }
 
-   appendsInfoToModal(user);
-
-   }
-
-  else if (event.target.className === "box") {
-    appendsInfoToModal(user);
-
-   }
-})
-
+  })
 
 // closes modal
 document.querySelector(".closeBtn").addEventListener("click",() => {

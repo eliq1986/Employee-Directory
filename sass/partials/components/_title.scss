@@ -1,0 +1,13 @@
+
+.title {
+  @media(min-width: $min-screen-break) {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    font-weight: 400;
+    font-size: 3rem;
+    letter-spacing: .2em;
+    text-shadow: -2px 0 2px $color-dark;
+    margin: 2em 0;
+  }
+}

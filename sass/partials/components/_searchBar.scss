@@ -1,0 +1,15 @@
+input {
+border: none;
+padding: .8em;
+width: 80%;
+margin: auto;
+display: block;
+border-radius: .3rem;
+outline: none;
+&:hover {
+    cursor: pointer;
+  }
+  @media (min-width: $min-screen-break) {
+    width: 50%;
+  }
+}

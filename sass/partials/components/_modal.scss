@@ -1,0 +1,94 @@
+
+
+
+.modal {
+display: none;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
+background-color: $color-modal-bg;
+  &-name,
+   &-city,
+   &-address,
+   &-email,
+   &-phone,
+   &-birthday {
+    margin-top: .8em;
+    text-transform: capitalize;
+    color: $color-employee-border;
+  }
+  &-content {
+    background-color: $color-employee-light-bg;
+    margin: 8% auto;
+    padding: 20px;
+    width: 90%;
+    text-align: center;
+    border-radius: .3em;
+    overflow: auto;
+    max-width: 300px;
+    animation-name: moveDown;
+    animation-duration: .7s;
+    animation-timing-function: ease-in;
+     .contact-city, .contact-name, .contact-email {
+       margin-bottom: .5em;
+     }
+      .contact-addres,
+      .contact-birthday {
+        margin: .8em 0;
+      }
+  }
+  &-content-out {
+    background-color: $color-employee-light-bg;
+    margin: 8% auto;
+    padding: 20px;
+    width: 90%;
+    text-align: center;
+    border-radius: .3em;
+    overflow: auto;
+    max-width: 300px;
+    animation-name: moveUp;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+  }
+  &-border {
+    display: none;
+  }
+  @media(min-width: $min-screen-break) {
+    &-city, &-address {
+        text-transform: capitalize;
+    }
+    &-phone {
+      margin-top: 2em;
+    }
+    &-photo {
+      margin: auto;
+      display: block;
+    }
+    &-email,
+    &-city,
+    &-phone,
+    &-address,
+    &-brithday {
+       color: $color-modal-text;
+    }
+    &-name {
+      font-size: 1.2em;
+      color: $color-dark;
+      margin-top: 2em;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+    &-content {
+      background-color: $color-employee-light-bg;
+      margin: 15% auto;
+      padding: 20px;
+      width: 25%;
+      box-shadow: 0 5px 8px 0 $color-modal-boxshadow;
+      text-align: center;
+      border-radius: .3em;
+    }
+  }
+}

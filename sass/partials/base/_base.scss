@@ -1,9 +1,7 @@
-
 * {
 box-sizing: border-box;
 font-family: 'Roboto Slab', serif;
 }
-
 html {
 background: linear-gradient(rgba(208, 208, 208, 0.4), rgba(208, 208, 208, 0.7)), url("../images/brick-wall.jpg");
 background-size: cover;
@@ -11,10 +9,22 @@ background-repeat: no-repeat;
 min-height: 100%;
 }
 
-body {
-  @media(min-width: 1024px) {
-    width: 90%;
-    margin: auto;
-    max-width: 1350px;
+
+main {
+margin-top: 1em;
+}
+
+
+p {
+margin: 0;
+word-break: break-all;
+ @media(min-width: $min-screen-break) {
+     padding-bottom: .7em;
+ }
+}
+h2 {
+  @media (min-width: $min-screen-break) {
+    margin: 0;
+    text-align: left;
   }
 }

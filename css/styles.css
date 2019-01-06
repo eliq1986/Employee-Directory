@@ -8,31 +8,6 @@ html {
   background-repeat: no-repeat;
   min-height: 100%; }
 
-@media (min-width: 1024px) {
-  body {
-    width: 90%;
-    margin: auto;
-    max-width: 1350px; } }
-
-.closeBtn {
-  float: right;
-  font-size: 3em; }
-  .closeBtn:hover {
-    cursor: pointer; }
-  @media (min-width: 1024px) {
-    .closeBtn {
-      font-size: 2em; } }
-
-img {
-  border-radius: 50%;
-  width: 80px;
-  margin-left: 1em;
-  margin-top: 15px; }
-  @media (min-width: 1024px) {
-    img {
-      margin-top: 10px;
-      width: 95px; } }
-
 main {
   margin-top: 1em; }
 
@@ -43,49 +18,38 @@ p {
     p {
       padding-bottom: .7em; } }
 
-input {
-  border: none;
-  padding: .8em;
-  width: 80%;
-  margin: auto;
-  display: block;
-  border-radius: .3rem;
-  outline: none; }
-  input:hover {
-    cursor: pointer; }
-  @media (min-width: 1024px) {
-    input {
-      width: 50%; } }
-
 @media (min-width: 1024px) {
   h2 {
     margin: 0;
     text-align: left; } }
 
 @media (min-width: 1024px) {
+  @keyframes moveUp {
+    0% {
+      transform: translateY(0); }
+    80% {
+      opacity: 0.3; }
+    100% {
+      transform: translateY(-300px);
+      opacity: 0; } }
+  @keyframes moveDown {
+    0% {
+      transform: translateY(-300px);
+      opacity: 0; }
+    100% {
+      opacity: 1;
+      transform: translateY(0); } } }
+
+@media (min-width: 1024px) {
+  body {
+    width: 90%;
+    margin: auto;
+    max-width: 1350px; } }
+
+@media (min-width: 1024px) {
   .container {
     display: flex;
     flex-flow: wrap; } }
-
-.box {
-  background-color: #fff;
-  padding: 1em 0;
-  border-radius: .5em;
-  border: 2px solid #a8a8a8;
-  margin: 1em auto;
-  display: flex;
-  width: 90%;
-  transition: .3s; }
-  .box:hover {
-    cursor: pointer;
-    border: 2px solid #a8a8a8;
-    transition-timing-function: ease-in-out;
-    transform: rotate(5deg);
-    box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.25); }
-  @media (min-width: 1024px) {
-    .box {
-      margin: 1em 10px 10px 0;
-      width: 32%; } }
 
 .contact-info {
   margin-left: 2em; }
@@ -111,6 +75,26 @@ input {
   .contact-info {
     margin: 1.1em 0 0 1em;
     width: 90%; } }
+
+.box {
+  background-color: #fff;
+  padding: 1em 0;
+  border-radius: .5em;
+  border: 2px solid #a8a8a8;
+  margin: 1em auto;
+  display: flex;
+  width: 90%;
+  transition: .3s; }
+  .box:hover {
+    cursor: pointer;
+    border: 2px solid #a8a8a8;
+    transition-timing-function: ease-in-out;
+    transform: rotate(5deg);
+    box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.25); }
+  @media (min-width: 1024px) {
+    .box {
+      margin: 1em 10px 10px 0;
+      width: 32%; } }
 
 .modal {
   display: none;
@@ -181,9 +165,38 @@ input {
       text-align: center;
       border-radius: .3em; } }
 
-.phone,
-.border {
-  display: none; }
+.closeBtn {
+  float: right;
+  font-size: 3em; }
+  .closeBtn:hover {
+    cursor: pointer; }
+  @media (min-width: 1024px) {
+    .closeBtn {
+      font-size: 2em; } }
+
+img {
+  border-radius: 50%;
+  width: 80px;
+  margin-left: 1em;
+  margin-top: 15px; }
+  @media (min-width: 1024px) {
+    img {
+      margin-top: 10px;
+      width: 95px; } }
+
+input {
+  border: none;
+  padding: .8em;
+  width: 80%;
+  margin: auto;
+  display: block;
+  border-radius: .3rem;
+  outline: none; }
+  input:hover {
+    cursor: pointer; }
+  @media (min-width: 1024px) {
+    input {
+      width: 50%; } }
 
 @media (min-width: 1024px) {
   .title {
@@ -196,19 +209,6 @@ input {
     text-shadow: -2px 0 2px #000;
     margin: 2em 0; } }
 
-@media (min-width: 1024px) {
-  @keyframes moveUp {
-    0% {
-      transform: translateY(0); }
-    80% {
-      opacity: 0.3; }
-    100% {
-      transform: translateY(-300px);
-      opacity: 0; } }
-  @keyframes moveDown {
-    0% {
-      transform: translateY(-300px);
-      opacity: 0; }
-    100% {
-      opacity: 1;
-      transform: translateY(0); } } }
+.phone,
+.border {
+  display: none; }
