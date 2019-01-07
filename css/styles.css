@@ -51,51 +51,6 @@ p {
     display: flex;
     flex-flow: wrap; } }
 
-.contact-info {
-  margin-left: 2em; }
-
-.contact-name {
-  font-weight: bold;
-  padding: .5em 0;
-  text-transform: capitalize; }
-
-.contact-email, .contact-city, .contact-address, .contact-birthday {
-  color: #a8a8a8;
-  font-weight: 300;
-  font-size: .9em;
-  padding: .5em 0; }
-
-.contact-city, .contact-address {
-  text-transform: capitalize; }
-
-.contact-address, .contact-birthday {
-  display: none; }
-
-@media (min-width: 1024px) {
-  .contact-info {
-    margin: 1.1em 0 0 1em;
-    width: 90%; } }
-
-.box {
-  background-color: #fff;
-  padding: 1em 0;
-  border-radius: .5em;
-  border: 2px solid #a8a8a8;
-  margin: 1em auto;
-  display: flex;
-  width: 90%;
-  transition: .3s; }
-  .box:hover {
-    cursor: pointer;
-    border: 2px solid #a8a8a8;
-    transition-timing-function: ease-in-out;
-    transform: rotate(5deg);
-    box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.25); }
-  @media (min-width: 1024px) {
-    .box {
-      margin: 1em 10px 10px 0;
-      width: 32%; } }
-
 .modal {
   display: none;
   position: fixed;
@@ -163,7 +118,19 @@ p {
       width: 25%;
       box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
       text-align: center;
-      border-radius: .3em; } }
+      border-radius: .3em; }
+    .modal-content-out {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 25px;
+      width: 25%;
+      text-align: center;
+      border-radius: .3em;
+      overflow: auto;
+      max-width: 300px;
+      animation-name: moveUp;
+      animation-duration: .7s;
+      animation-timing-function: ease-in-out; } }
 
 .closeBtn {
   float: right;
@@ -173,6 +140,51 @@ p {
   @media (min-width: 1024px) {
     .closeBtn {
       font-size: 2em; } }
+
+.contact-info {
+  margin-left: 2em; }
+
+.contact-name {
+  font-weight: bold;
+  padding: .5em 0;
+  text-transform: capitalize; }
+
+.contact-email, .contact-city, .contact-address, .contact-birthday {
+  color: #a8a8a8;
+  font-weight: 300;
+  font-size: .9em;
+  padding: .5em 0; }
+
+.contact-city, .contact-address {
+  text-transform: capitalize; }
+
+.contact-address, .contact-birthday {
+  display: none; }
+
+@media (min-width: 1024px) {
+  .contact-info {
+    margin: 1.1em 0 0 1em;
+    width: 90%; } }
+
+.box {
+  background-color: #fff;
+  padding: 1em 0;
+  border-radius: .5em;
+  border: 2px solid #a8a8a8;
+  margin: 1em auto;
+  display: flex;
+  width: 90%;
+  transition: .3s; }
+  .box:hover {
+    cursor: pointer;
+    border: 2px solid #a8a8a8;
+    transition-timing-function: ease-in-out;
+    transform: rotate(5deg);
+    box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.25); }
+  @media (min-width: 1024px) {
+    .box {
+      margin: 1em 10px 10px 0;
+      width: 32%; } }
 
 img {
   border-radius: 50%;

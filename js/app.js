@@ -1,6 +1,8 @@
 "use strict";
 // API CALL
-fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture,phone&nat=us').then(response => response.json()).then(data => {
+fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture,phone&nat=us')
+.then(response => response.json())
+.then(data => {
 
   //DOM ELEMENTS
   const directoryContainer = document.getElementsByClassName("container")[0];
@@ -8,12 +10,9 @@ fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture
   const modalContent = document.querySelector(".modal-content");
 
   // returns formatted DOB
-  const formatBirthday = (data) => {
+  const formatBirthday = data => {
     let splitBirthday = data.slice(0, 10).split("-");
-    let day = splitBirthday.pop();
-    let month = splitBirthday.pop();
-    let year = splitBirthday.pop();
-    return `${month}/${day}/${year}`;
+    return `${splitBirthday[1]}/${splitBirthday[2]}/${splitBirthday[0]}`;
   }
 
   // appends input element
@@ -61,6 +60,7 @@ fetch('https://randomuser.me/api/?results=12&inc=name,email,location,dob,picture
 
   //  listener fires when a box is clicked
   directoryContainer.addEventListener("click", event => {
+    console.log(event.target);
     let randomUser = {};
     if (event.target.parentNode.parentNode.className === "box") {
 
