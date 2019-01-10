@@ -11,8 +11,7 @@
 .contact-email, .contact-city, .contact-address, .contact-birthday {
   color: #a8a8a8;
   font-weight: 300;
-  font-size: 1.1em;
-  padding: .5em 0; }
+  font-size: 1.1em; }
 
 * {
   box-sizing: border-box;
@@ -145,6 +144,7 @@ p {
   margin-left: 2em; }
 
 .contact-name {
+  font-size: 1.1em;
   font-weight: bold;
   padding: .5em 0;
   text-transform: capitalize; }
