@@ -21,14 +21,7 @@ background-color: $color-modal-bg;
     color: $color-employee-border;
   }
   &-content {
-    background-color: $color-employee-light-bg;
-    margin: 8% auto;
-    padding: 20px;
-    width: 90%;
-    text-align: center;
-    border-radius: .3em;
-    overflow: auto;
-    max-width: 300px;
+    @extend %modal;
     animation-name: moveDown;
     animation-duration: .7s;
     animation-timing-function: ease-in;
@@ -41,14 +34,7 @@ background-color: $color-modal-bg;
       }
   }
   &-content-out {
-    background-color: $color-employee-light-bg;
-    margin: 8% auto;
-    padding: 20px;
-    width: 90%;
-    text-align: center;
-    border-radius: .3em;
-    overflow: auto;
-    max-width: 300px;
+     @extend %modal;
     animation-name: moveUp;
     animation-duration: .7s;
     animation-timing-function: ease-in-out;

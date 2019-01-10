@@ -1,3 +1,19 @@
+.modal-content, .modal-content-out {
+  background-color: #fff;
+  margin: 8% auto;
+  padding: 20px;
+  width: 90%;
+  text-align: center;
+  border-radius: .3em;
+  overflow: auto;
+  max-width: 300px; }
+
+.contact-email, .contact-city, .contact-address, .contact-birthday {
+  color: #a8a8a8;
+  font-weight: 300;
+  font-size: 1.1em;
+  padding: .5em 0; }
+
 * {
   box-sizing: border-box;
   font-family: 'Roboto Slab', serif; }
@@ -65,14 +81,6 @@ p {
     text-transform: capitalize;
     color: #a8a8a8; }
   .modal-content {
-    background-color: #fff;
-    margin: 8% auto;
-    padding: 20px;
-    width: 90%;
-    text-align: center;
-    border-radius: .3em;
-    overflow: auto;
-    max-width: 300px;
     animation-name: moveDown;
     animation-duration: .7s;
     animation-timing-function: ease-in; }
@@ -82,14 +90,6 @@ p {
     .modal-content .contact-birthday {
       margin: .8em 0; }
   .modal-content-out {
-    background-color: #fff;
-    margin: 8% auto;
-    padding: 20px;
-    width: 90%;
-    text-align: center;
-    border-radius: .3em;
-    overflow: auto;
-    max-width: 300px;
     animation-name: moveUp;
     animation-duration: .7s;
     animation-timing-function: ease-in-out; }
@@ -148,12 +148,6 @@ p {
   font-weight: bold;
   padding: .5em 0;
   text-transform: capitalize; }
-
-.contact-email, .contact-city, .contact-address, .contact-birthday {
-  color: #a8a8a8;
-  font-weight: 300;
-  font-size: .9em;
-  padding: .5em 0; }
 
 .contact-city, .contact-address {
   text-transform: capitalize; }

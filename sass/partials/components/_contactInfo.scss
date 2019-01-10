@@ -10,10 +10,7 @@
     text-transform: capitalize;
   }
   &-email, &-city, &-address, &-birthday {
-    color: $color-employee-border;
-    font-weight: 300;
-    font-size: .9em;
-    padding: .5em 0;
+    @extend %contact-info;
   }
   &-city, &-address {
     text-transform: capitalize;
